@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 3
+  speed: 4
   effect: {fileID: 4599285165401998725, guid: 46d05659277ba32419bfcf833efe14da, type: 3}
 --- !u!114 &3650084416780892327
 MonoBehaviour:

@@ -19,18 +19,18 @@ public class Player : MonoBehaviour
     public GameObject effect;
 
     public Text healthDisplay;
+    public GameObject gameOver;
 
     private void Update()
     {
         healthDisplay.text = health.ToString();
 
-        //Restart game if player dies by reloading the active scene
+        //Brings up game over screen when player dies
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            //SceneManager.LoadScene("GameOver"); to load gameover scene instead
+            gameOver.SetActive(true);
+            Destroy(gameObject);
         }
-
 
         //to enable player movement up/down to look better rather than instant teleportation
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
