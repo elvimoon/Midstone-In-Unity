@@ -28,10 +28,5 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //Destroy surviving obstacles once they exit screen to left
-        if (other.CompareTag("Obstacle"))
-        {
-            Destroy(gameObject);
-        }
     }
 }

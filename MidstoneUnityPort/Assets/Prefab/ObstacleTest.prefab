@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2041677376306637100}
   - component: {fileID: 2041677376306637101}
   - component: {fileID: 2041677376306637090}
+  - component: {fileID: 3650084416780892327}
   m_Layer: 0
   m_Name: ObstacleTest
   m_TagString: Untagged
@@ -114,3 +115,16 @@ MonoBehaviour:
   damage: 1
   speed: 3
   effect: {fileID: 4599285165401998725, guid: 46d05659277ba32419bfcf833efe14da, type: 3}
+--- !u!114 &3650084416780892327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041677376306637091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef51885ade22f74f8522336ea638615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
