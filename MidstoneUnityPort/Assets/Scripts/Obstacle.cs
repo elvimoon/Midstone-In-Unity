@@ -27,5 +27,11 @@ public class Obstacle : MonoBehaviour
             Debug.Log(other.GetComponent<Player>().health);
             Destroy(gameObject);
         }
+
+        //Destroy surviving obstacles once they exit screen to left
+        if (other.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
