@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour
     public int damage = 1;
     public float speed;
 
+    public GameObject effect;
 
     private void Update()
     {
@@ -19,6 +20,9 @@ public class Obstacle : MonoBehaviour
         //Player taking damage upon collision with obstacle
         if (other.CompareTag("Player"))
         {
+            //spawn obstacle destroy particle effect
+            Instantiate(effect, transform.position, Quaternion.identity);
+            //lower player health, set damage # in inspector
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
             Destroy(gameObject);
