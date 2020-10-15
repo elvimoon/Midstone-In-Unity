@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     public int health = 3;
 
+    public GameObject effect;
+
     private void Update()
     {
         //Restart game if player dies by reloading the active scene
@@ -31,11 +33,17 @@ public class Player : MonoBehaviour
         //Player Movement Inputs Using Up/Down Arrow or W/S Key
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && transform.position.y < MaxHeight)
         {
+            //spawn player effect when player moves
+            Instantiate(effect, transform.position, Quaternion.identity);
+
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             //transform.position = targetPos;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) && transform.position.y > MinHeight)
         {
+            //spawn player effect when player moves
+            Instantiate(effect, transform.position, Quaternion.identity);
+
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             //transform.position = targetPos;
         }

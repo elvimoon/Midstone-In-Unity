@@ -244,6 +244,7 @@ MonoBehaviour:
   MaxHeight: 3.5
   MinHeight: -3.5
   health: 3
+  effect: {fileID: 8771460288235817039, guid: 7dabdbdb09035764e810b76c68f808fe, type: 3}
 --- !u!50 &1330406084
 Rigidbody2D:
   serializedVersion: 4
@@ -387,7 +388,7 @@ MonoBehaviour:
   - {fileID: 6119139629028388880, guid: ae9583b2184a0f240ad40d92760f4188, type: 3}
   - {fileID: 7129163157244978315, guid: 32c3c5aaf1565714faef97d0f6473c89, type: 3}
   - {fileID: 6600966141757521922, guid: 35f2107eeb73bf842a42d96fb9d20c75, type: 3}
-  startTimeBetweenSpawn: 2
+  startTimeBetweenSpawn: 1.5
   decreaseTime: 0.02
   minimumTime: 1
 --- !u!4 &1629519007
