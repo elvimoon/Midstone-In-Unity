@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //required for restarting game if player dies, needs access to the scene
+using UnityEngine.UI; //required for adding any ui
 
 public class Player : MonoBehaviour
 {
@@ -17,8 +18,12 @@ public class Player : MonoBehaviour
 
     public GameObject effect;
 
+    public Text healthDisplay;
+
     private void Update()
     {
+        healthDisplay.text = health.ToString();
+
         //Restart game if player dies by reloading the active scene
         if (health <= 0)
         {
