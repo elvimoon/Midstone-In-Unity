@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
 
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             //transform.position = targetPos;
+            //getaxisraw movement 
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) && transform.position.y > MinHeight)
         {

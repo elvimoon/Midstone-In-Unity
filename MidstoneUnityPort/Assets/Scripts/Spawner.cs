@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+
+    //object pool
+
     //set up array of spawner patterns by having multiple spawn pattern gameobjects to place into inspector window
     public GameObject[] obstaclePattern;
 
