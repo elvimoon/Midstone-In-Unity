@@ -21,6 +21,14 @@ public class Player : MonoBehaviour
     public Text healthDisplay;
     public GameObject gameOver;
 
+    private CameraShake shake;
+
+    private void Start()
+    {
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<CameraShake>();
+    }
+
+
     private void Update()
     {
         healthDisplay.text = health.ToString();
@@ -38,6 +46,9 @@ public class Player : MonoBehaviour
         //Player Movement Inputs Using Up/Down Arrow or W/S Key
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && transform.position.y < MaxHeight)
         {
+            //play camera shake effect when player moves
+            shake.CamShake();
+
             //spawn player effect when player moves
             Instantiate(effect, transform.position, Quaternion.identity);
 
@@ -47,6 +58,9 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) && transform.position.y > MinHeight)
         {
+            //play camera shake effect when player moves
+            shake.CamShake();
+
             //spawn player effect when player moves
             Instantiate(effect, transform.position, Quaternion.identity);
 
