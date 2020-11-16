@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//public enum PowerType { None, Power1, Power2 }
+public enum PowerType { Heal, Bomb }
 
 public class HealPowerUp : MonoBehaviour
 {
     //public Inventory inventory;
     public float speed;
-  //  public int power = 1; //Should never be 0
+    public PowerType power;
     public int heal = 1;
 
     public GameObject effect;
@@ -33,14 +33,22 @@ public class HealPowerUp : MonoBehaviour
             Destroy(gameObject);
         }
 
-        /*
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<Inventory>().heldPower = power;
-            Debug.Log("Got power type " + power);
-            Destroy(gameObject);
-        }
-        */
+        //if (other.CompareTag("Player"))
+        //{
+        //    Instantiate(effect, transform.position, Quaternion.identity);
+        //    switch (power)
+        //    {
+        //        case PowerType.Heal:
+        //            other.GetComponent<Inventory>().heldHeal = Mathf.Min(GetComponent<Inventory>().heldHeal + 1, GetComponent<Inventory>().maxHeldPickups);
+        //            Debug.Log("Got Heal Power");
+        //            break;
+        //        case PowerType.Bomb:
+        //            other.GetComponent<Inventory>().heldBomb = Mathf.Min(GetComponent<Inventory>().heldHeal + 1, GetComponent<Inventory>().maxHeldPickups);
+        //            Debug.Log("Got Bomb Power");
+        //            break;
+        //    }
+        //    Destroy(gameObject);
+        //}
     }
 }
 
