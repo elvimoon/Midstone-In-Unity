@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    public GameObject obstacle;
+    public GameObject[] obstacle;
 
     void Start()
     {
-        Instantiate(obstacle, transform.position, Quaternion.identity);
+        int obstacle_num = Random.Range(0, 3);
+        Instantiate(obstacle[obstacle_num], transform.position, Quaternion.identity);
     }
 
- 
 }

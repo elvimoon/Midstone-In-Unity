@@ -43,7 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635ebaefe77e37b4fac8018e939b3167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 2041677376306637091, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
+  obstacle:
+  - {fileID: 2041677376306637091, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
+  - {fileID: 8147622810085441673, guid: 45eec5e4d43a96c4286eb8b00fae89c4, type: 3}
+  - {fileID: 388294143533556249, guid: a1daedb6cfb39b649a1ee5ca1f6c870d, type: 3}
 --- !u!1 &4906177946504986071
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635ebaefe77e37b4fac8018e939b3167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 2041677376306637091, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
+  obstacle:
+  - {fileID: 2041677376306637091, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
+  - {fileID: 8147622810085441673, guid: 45eec5e4d43a96c4286eb8b00fae89c4, type: 3}
+  - {fileID: 388294143533556249, guid: a1daedb6cfb39b649a1ee5ca1f6c870d, type: 3}
 --- !u!1 &6600966141757521922
 GameObject:
   m_ObjectHideFlags: 0
