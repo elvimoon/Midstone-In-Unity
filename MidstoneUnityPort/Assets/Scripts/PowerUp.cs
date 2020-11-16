@@ -8,14 +8,11 @@ public class PowerUp : MonoBehaviour
 {
     //public Inventory inventory;
     public float speed;
-    public int power = 1; //Should never be 0
-    
-    // Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
+  //  public int power = 1; //Should never be 0
+    public int heal = 1;
 
+    public GameObject effect;
+    
     // Update is called once per frame
     void Update()
     {
@@ -25,10 +22,25 @@ public class PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) {
+        //Player taking damage upon collision with obstacle
+        if (other.CompareTag("Player"))
+        {
+            //spawn obstacle destroy particle effect
+            Instantiate(effect, transform.position, Quaternion.identity);
+            //increase player health, set heal # in inspector
+            other.GetComponent<Player>().health += heal;
+            Debug.Log(other.GetComponent<Player>().health);
+            Destroy(gameObject);
+        }
+
+        /*
+        if (other.CompareTag("Player"))
+        {
             other.GetComponent<Inventory>().heldPower = power;
             Debug.Log("Got power type " + power);
             Destroy(gameObject);
         }
+        */
     }
 }
+
