@@ -20,12 +20,20 @@ public class Player : MonoBehaviour
 
     public Text healthDisplay;
     public GameObject gameOver;
+    public GameObject healIcon;
+    public GameObject clearIcon;
 
     private CameraShake shake;
+    private Player_Anim p_up;
+    private Player_Anim p_down;
+    private Player_Anim p_power;
 
     private void Start()
     {
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<CameraShake>();
+        p_up = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
+        p_down = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
+        p_power = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
     }
 
 
@@ -47,18 +55,18 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && transform.position.y < MaxHeight)
         {
             //play camera shake effect when player moves
+            p_up.PlayerUp();
             shake.CamShake();
 
             //spawn player effect when player moves
             Instantiate(effect, transform.position, Quaternion.identity);
 
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-            //transform.position = targetPos;
-            //getaxisraw movement 
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) && transform.position.y > MinHeight)
         {
             //play camera shake effect when player moves
+            p_down.PlayerDown();
             shake.CamShake();
 
             //spawn player effect when player moves
@@ -66,6 +74,21 @@ public class Player : MonoBehaviour
 
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             //transform.position = targetPos;
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PowerHeal"))
+        {
+            //p_power.PlayerPower();
+            healIcon.SetActive(true);
+        }
+        else if (other.CompareTag("PowerClear"))
+        {
+           // p_power.PlayerPower();
+            clearIcon.SetActive(true);
         }
 
     }

@@ -28,8 +28,8 @@ public class HealPowerUp : MonoBehaviour
             //spawn obstacle destroy particle effect
             Instantiate(effect, transform.position, Quaternion.identity);
             //increase player health, set heal # in inspector
-            other.GetComponent<Player>().health += heal;
-            Debug.Log(other.GetComponent<Player>().health);
+            //other.GetComponent<Player>().health += heal;
+            //Debug.Log(other.GetComponent<Player>().health);
             Destroy(gameObject);
         }
 

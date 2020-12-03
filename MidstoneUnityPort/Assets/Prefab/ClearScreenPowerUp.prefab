@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 388294143533556251}
   m_Layer: 0
   m_Name: ClearScreenPowerUp
-  m_TagString: Untagged
+  m_TagString: PowerClear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

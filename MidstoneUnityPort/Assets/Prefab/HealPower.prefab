@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4255575460222396428}
   m_Layer: 0
   m_Name: HealPower
-  m_TagString: Untagged
+  m_TagString: PowerHeal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,5 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  power: 0
   heal: 1
   effect: {fileID: 4599285165401998725, guid: 46d05659277ba32419bfcf833efe14da, type: 3}

@@ -8,10 +8,17 @@ public class Obstacle : MonoBehaviour
     public float speed;
 
     public GameObject effect;
+    private obstacle_anim obsMove;
+
+    private void Start()
+    {
+       obsMove = GameObject.FindGameObjectWithTag("ObstacleSprite").GetComponent<obstacle_anim>();
+    }
 
     private void Update()
     {
         //Obstacle moving continually left
+        //obsMove.ObstacleMoving();
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 

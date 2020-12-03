@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Obstacle
   - ScreenShake
+  - PlayerSprite
+  - PowerHeal
+  - PowerClear
+  - ObstacleSprite
   layers:
   - Default
   - TransparentFX

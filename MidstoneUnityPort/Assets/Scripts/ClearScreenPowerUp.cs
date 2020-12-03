@@ -24,9 +24,9 @@ public class ClearScreenPowerUp : MonoBehaviour
         {
             Instantiate(effect, transform.position, Quaternion.identity);
 
-            GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-            foreach (GameObject obstacle in obstacles)
-                GameObject.Destroy(obstacle);
+          //  GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+           // foreach (GameObject obstacle in obstacles)
+            //    GameObject.Destroy(obstacle);
 
             Destroy(gameObject);
         }
