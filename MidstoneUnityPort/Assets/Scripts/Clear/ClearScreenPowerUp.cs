@@ -10,6 +10,23 @@ public class ClearScreenPowerUp : MonoBehaviour
 
     public GameObject effect;
 
+    private void Start()
+    {
+        GameObject[] obj = GameObject.FindGameObjectsWithTag("ClearSprite");
+
+        if (obj.Length > 0)
+        {
+            for (int i = 0; i < obj.Length; i++)
+            {
+                Clear_Anim clearMove = obj[i].GetComponent<Clear_Anim>();
+                if (clearMove)
+                {
+                    clearMove.ClearMoving();
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +45,11 @@ public class ClearScreenPowerUp : MonoBehaviour
            // foreach (GameObject obstacle in obstacles)
             //    GameObject.Destroy(obstacle);
 
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Laser"))
+        {
             Destroy(gameObject);
         }
     }

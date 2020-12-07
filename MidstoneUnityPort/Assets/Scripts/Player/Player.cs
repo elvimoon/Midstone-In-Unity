@@ -20,8 +20,15 @@ public class Player : MonoBehaviour
 
     public Text healthDisplay;
     public GameObject gameOver;
+
     public GameObject healIcon;
+    public GameObject heal1;
+    public GameObject heal2;
+
+
     public GameObject clearIcon;
+    public GameObject clear1;
+    public GameObject clear2;
 
     private CameraShake shake;
     private Player_Anim p_up;
@@ -75,21 +82,54 @@ public class Player : MonoBehaviour
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
             //transform.position = targetPos;
         }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) && transform.position.x > -12.0f)
+        {
+            shake.CamShake();
+            Instantiate(effect, transform.position, Quaternion.identity);
+            targetPos = new Vector2(transform.position.x - 5.0f, transform.position.y);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) && transform.position.x < 9.0f)
+        {
+            shake.CamShake();
+            Instantiate(effect, transform.position, Quaternion.identity);
+            targetPos = new Vector2(transform.position.x + 5.0f, transform.position.y);
+        }
 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PowerHeal"))
+
+        // need to collect 3 heal power ups to use power
+        if (other.CompareTag("PowerHeal") && heal1.activeInHierarchy == false && heal2.activeInHierarchy == false && healIcon.activeInHierarchy == false)
         {
-            //p_power.PlayerPower();
-            healIcon.SetActive(true);
+            heal1.SetActive(true);
         }
-        else if (other.CompareTag("PowerClear"))
+        else if (other.CompareTag("PowerHeal") && heal1.activeInHierarchy)
         {
-           // p_power.PlayerPower();
-            clearIcon.SetActive(true);
+            heal2.SetActive(true);
+            heal1.SetActive(false);
+        }
+        else if (other.CompareTag("PowerHeal") && heal2.activeInHierarchy)
+        {
+            healIcon.SetActive(true);
+            heal2.SetActive(false);
         }
 
+        //need to collect 3 clear power ups to use power
+        if (other.CompareTag("PowerClear") && clear1.activeInHierarchy == false && clear2.activeInHierarchy == false && clearIcon.activeInHierarchy == false)
+        {
+            clear1.SetActive(true);
+        }
+        else if (other.CompareTag("PowerClear") && clear1.activeInHierarchy)
+        {
+            clear2.SetActive(true);
+            clear1.SetActive(false);
+        }
+        else if (other.CompareTag("PowerClear") && clear2.activeInHierarchy)
+        {
+            clearIcon.SetActive(true);
+            clear2.SetActive(false);
+        }
     }
 }

@@ -2,23 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Laser : MonoBehaviour
 {
-    public int damage = 1;
+    public int damage = 10;
     public float speed;
 
-    public GameObject effect;
-    private obstacle_anim obsMove;
-
-    private void Start()
-    {
-       obsMove = GameObject.FindGameObjectWithTag("ObstacleSprite").GetComponent<obstacle_anim>();
-    }
+    //public GameObject effect;
 
     private void Update()
     {
-        //Obstacle moving continually left
-        //obsMove.ObstacleMoving();
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 
@@ -28,12 +20,15 @@ public class Obstacle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //spawn obstacle destroy particle effect
-            Instantiate(effect, transform.position, Quaternion.identity);
+            //Instantiate(effect, transform.position, Quaternion.identity);
             //lower player health, set damage # in inspector
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
+
+
     }
+
 }

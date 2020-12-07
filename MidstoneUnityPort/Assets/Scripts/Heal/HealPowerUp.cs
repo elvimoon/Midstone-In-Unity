@@ -12,7 +12,24 @@ public class HealPowerUp : MonoBehaviour
     public int heal = 1;
 
     public GameObject effect;
-    
+
+    private void Start()
+    {
+        GameObject[] obj = GameObject.FindGameObjectsWithTag("HealSprite");
+
+        if (obj.Length > 0)
+        {
+            for (int i = 0; i < obj.Length; i++)
+            {
+                Heal_Anim healMove = obj[i].GetComponent<Heal_Anim>();
+                if (healMove)
+                {
+                    healMove.HealMoving();
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +47,11 @@ public class HealPowerUp : MonoBehaviour
             //increase player health, set heal # in inspector
             //other.GetComponent<Player>().health += heal;
             //Debug.Log(other.GetComponent<Player>().health);
+            Destroy(gameObject);
+        }
+
+        else if (other.CompareTag("Laser"))
+        {
             Destroy(gameObject);
         }
 

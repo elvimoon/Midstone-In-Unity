@@ -10,6 +10,10 @@ TagManager:
   - PowerHeal
   - PowerClear
   - ObstacleSprite
+  - HealSprite
+  - ClearSprite
+  - LaserSprite
+  - Laser
   layers:
   - Default
   - TransparentFX
