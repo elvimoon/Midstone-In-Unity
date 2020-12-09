@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private Vector2 targetPos;
     public float Yincrement;
     //values set public to allow changing values in inspector window
- 
+
     public float speed;
     public float MaxHeight;
     public float MinHeight;
@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     private Player_Anim p_up;
     private Player_Anim p_down;
     private Player_Anim p_power;
+    private Player_Anim p_death;
 
     private void Start()
     {
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
         p_up = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
         p_down = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
         p_power = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
+        p_death = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
     }
 
 
@@ -52,7 +54,8 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             gameOver.SetActive(true);
-            Destroy(gameObject);
+            p_death.PlayerDeath();
+            Invoke("Destroy", 1);
         }
 
         //to enable player movement up/down to look better rather than instant teleportation
@@ -131,5 +134,10 @@ public class Player : MonoBehaviour
             clearIcon.SetActive(true);
             clear2.SetActive(false);
         }
+    }
+
+    private void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

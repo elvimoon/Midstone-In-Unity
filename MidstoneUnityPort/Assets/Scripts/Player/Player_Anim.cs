@@ -20,5 +20,10 @@ public class Player_Anim : MonoBehaviour
     {
         playerAnim.SetTrigger("Player_Power");
     }
+
+    public void PlayerDeath()
+    {
+        playerAnim.SetTrigger("Player_Death");
+    }
 }
 
