@@ -1,16 +1,10 @@
 # Midstone-In-Unity
 GAME208 Midstone Unity Port
 
-Implement a prototype 2D game based off the engine created in the midstone class. The demo should
-showcase the features of the engine that is being created, such as graphics rendering, ai, physics, game
-mechanics, etc… One playable level should be implemented with a character, two enemies with AI,
-spawning with dynamic memory management, inheritance and composition for Object Oriented
-programming, and physics.
+This is a prototype 2D 5-Lane Endless Runner Unity -> Midstone port.
+Player controls a spaceship where they must dodge meteors and lasers to earn points to win.
+Controls are WASD, 2 Power-Ups (Heal, Nuke Meteors - Clear).
+Players must collect 3 of said power-ups in order to unlock the ability to use power - will be shown on bottom of screen as a button to click.
+Points are earned for every meteor the player dodges that reaches the left side of the screen.
+Simply earn 40 points to win.
 
-Teams should provide a write up of what will be implemented in the game engine for midstone. The
-write up will document and serve as a tool to create the submission schedule for the project. Weekly
-check-ins/progress updates will begin during week 6.
-
-Teams should book meetings bi-weekly to show progress on the build. There should be a minimum of
-four meetings booked throughout the term for grading purposes. More can be booked for assistance
-throughout the term using the Calendly link provided in the week 1 notes.
