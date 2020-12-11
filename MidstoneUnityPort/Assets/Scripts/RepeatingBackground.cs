@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class RepeatingBackground : MonoBehaviour
 {
-    public float speed;
 
+    public float speed;
     public float endX;
-    public float startX;
+    private float length;
+
 
     void Start()
     {
-        startX = GetComponent<SpriteRenderer>().bounds.size.x * 2;
+        length = GetComponent<SpriteRenderer>().bounds.size.x * 2;
+
     }
 
     private void Update()
@@ -20,7 +22,7 @@ public class RepeatingBackground : MonoBehaviour
 
         if (transform.position.x < endX)
         {
-            transform.position = new Vector2(transform.position.x + startX, transform.position.y);
+            transform.position = new Vector2(transform.position.x + length, transform.position.y);
 
             /*
             //move the background image slowly left at a set speed
@@ -34,7 +36,5 @@ public class RepeatingBackground : MonoBehaviour
             }
             */
         }
-
     }
-
 }

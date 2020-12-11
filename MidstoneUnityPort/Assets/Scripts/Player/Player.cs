@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
             Instantiate(effect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x - 5.0f, transform.position.y);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) && transform.position.x < 9.0f)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) && transform.position.x < 14.0f)
         {
             shake.CamShake();
             Instantiate(effect, transform.position, Quaternion.identity);

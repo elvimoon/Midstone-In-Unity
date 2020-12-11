@@ -61,7 +61,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 102.34886, y: -0.3338089}
+  m_Offset: {x: 103.48573, y: -0.3338089}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -72,7 +72,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 383.16086, y: 6.340805}
+  m_Size: {x: 397.29416, y: 6.340805}
   m_EdgeRadius: 0
 --- !u!50 &1998943432621253707
 Rigidbody2D:
@@ -108,18 +108,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.002340436, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.14, y: 0.74}
+    oldSize: {x: 8.2, y: 1.66}
     newSize: {x: 10.96, y: 11.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.14, y: 0.74}
+  m_Size: {x: 5.351907, y: 0.74}
   m_EdgeRadius: 0
 --- !u!114 &1971012876552523251
 MonoBehaviour:
@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 937485660331338694, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5556a916abe0e2949b92562d9d68a84d, type: 3}
+      objectReference: {fileID: 21300000, guid: d1bba6a193272e8459d82fea20a4e4b2, type: 3}
     - target: {fileID: 937485660331338694, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_Color.r
       value: 0.5
@@ -156,6 +156,14 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.2806604
       objectReference: {fileID: 0}
+    - target: {fileID: 937485660331338694, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
+      propertyPath: m_Size.x
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 937485660331338694, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
+      propertyPath: m_Size.y
+      value: 1.66
+      objectReference: {fileID: 0}
     - target: {fileID: 2041677376306637091, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_Name
       value: LaserWarning
@@ -166,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2041677376306637102, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -875.8
+      value: -595
       objectReference: {fileID: 0}
     - target: {fileID: 2041677376306637102, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_LocalPosition.y
@@ -210,7 +218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2041677376306637102, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_LocalScale.x
-      value: 306.72012
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2041677376306637102, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_LocalScale.y
@@ -240,7 +248,7 @@ PrefabInstance:
     - target: {fileID: 937485660331338694, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5556a916abe0e2949b92562d9d68a84d, type: 3}
+      objectReference: {fileID: 21300000, guid: d1bba6a193272e8459d82fea20a4e4b2, type: 3}
     - target: {fileID: 937485660331338694, guid: 79a393577b8bcc64dba53fab70bbb308, type: 3}
       propertyPath: m_Color.r
       value: 1
