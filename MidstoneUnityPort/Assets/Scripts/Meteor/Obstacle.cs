@@ -12,6 +12,7 @@ public class Obstacle : MonoBehaviour
 
     private void Start()
     {
+
         //obsMove = GameObject.FindGameObjectWithTag("ObstacleSprite").GetComponent<obstacle_anim>();
 
         GameObject[] obj = GameObject.FindGameObjectsWithTag("ObstacleSprite");
@@ -53,5 +54,10 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

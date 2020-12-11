@@ -36,8 +36,14 @@ public class Player : MonoBehaviour
     private Player_Anim p_power;
     private Player_Anim p_death;
 
+    private AudioSource playerSounds;
+    public AudioClip pickup;
+    public AudioClip hit;
+
     private void Start()
     {
+        playerSounds = GetComponent<AudioSource>();
+
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<CameraShake>();
         p_up = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
         p_down = GameObject.FindGameObjectWithTag("PlayerSprite").GetComponent<Player_Anim>();
@@ -106,33 +112,61 @@ public class Player : MonoBehaviour
         // need to collect 3 heal power ups to use power
         if (other.CompareTag("PowerHeal") && heal1.activeInHierarchy == false && heal2.activeInHierarchy == false && healIcon.activeInHierarchy == false)
         {
+            playerSounds.clip = pickup;
+            playerSounds.Play();
             heal1.SetActive(true);
         }
         else if (other.CompareTag("PowerHeal") && heal1.activeInHierarchy)
         {
+            playerSounds.clip = pickup;
+            playerSounds.Play();
             heal2.SetActive(true);
             heal1.SetActive(false);
         }
         else if (other.CompareTag("PowerHeal") && heal2.activeInHierarchy)
         {
+            playerSounds.clip = pickup;
+            playerSounds.Play();
             healIcon.SetActive(true);
             heal2.SetActive(false);
         }
+        else if (other.CompareTag("PowerHeal"))
+        {
+            playerSounds.clip = pickup;
+            playerSounds.Play();
+        }
 
-        //need to collect 3 clear power ups to use power
+            //need to collect 3 clear power ups to use power
+            if (other.CompareTag("PowerClear"))
+        {
+            playerSounds.clip = pickup;
+            playerSounds.Play();
+        }
         if (other.CompareTag("PowerClear") && clear1.activeInHierarchy == false && clear2.activeInHierarchy == false && clearIcon.activeInHierarchy == false)
         {
+            playerSounds.clip = pickup;
+            playerSounds.Play();
             clear1.SetActive(true);
         }
         else if (other.CompareTag("PowerClear") && clear1.activeInHierarchy)
         {
+            playerSounds.clip = pickup;
+            playerSounds.Play();
             clear2.SetActive(true);
             clear1.SetActive(false);
         }
         else if (other.CompareTag("PowerClear") && clear2.activeInHierarchy)
         {
+            playerSounds.clip = pickup;
+            playerSounds.Play();
             clearIcon.SetActive(true);
             clear2.SetActive(false);
+        }
+
+        if (other.CompareTag("Obstacle"))
+        {
+            playerSounds.clip = hit;
+            playerSounds.Play();
         }
     }
 

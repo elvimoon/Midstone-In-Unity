@@ -20,6 +20,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         //increase score every time obstacles collides with scoremanager object at left once clears camera
